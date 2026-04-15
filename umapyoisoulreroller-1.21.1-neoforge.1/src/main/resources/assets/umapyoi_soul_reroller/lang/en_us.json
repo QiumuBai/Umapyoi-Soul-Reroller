@@ -1,0 +1,13 @@
+{
+  "itemGroup.umapyoi_soul_reroller": "Example Mod Tab",
+  "block.umapyoi_soul_reroller.example_block": "Example Block",
+  "item.umapyoi_soul_reroller.example_item": "Example Item",
+
+  "umapyoi_soul_reroller.configuration.title": "Umapyoi Soul Reroller Configs",
+  "umapyoi_soul_reroller.configuration.section.umapyoi_soul_reroller.common.toml": "Umapyoi Soul Reroller Configs",
+  "umapyoi_soul_reroller.configuration.section.umapyoi_soul_reroller.common.toml.title": "Umapyoi Soul Reroller Configs",
+  "umapyoi_soul_reroller.configuration.items": "Item List",
+  "umapyoi_soul_reroller.configuration.logDirtBlock": "Log Dirt Block",
+  "umapyoi_soul_reroller.configuration.magicNumberIntroduction": "Magic Number Text",
+  "umapyoi_soul_reroller.configuration.magicNumber": "Magic Number"
+}
