@@ -34,6 +34,19 @@ public class Config {
             .comment("A list of items to log on common setup.")
             .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), () -> "", Config::validateItemName);
 
+    public static ModConfigSpec.IntValue REROLL_COST;
+    private static void setupRerollConfig() {
+        BUILDER.push("reroll_settings");
+        REROLL_COST = BUILDER
+                .comment("The amount of EXP levels required to reroll the factor seed")
+                .defineInRange("rerollCost", 1, 0, 100);
+        BUILDER.pop();
+    }
+
+    static {
+        setupRerollConfig();
+    }
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     private static boolean validateItemName(final Object obj) {
