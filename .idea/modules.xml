@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Umapyoi-Soul-Reroller.iml" filepath="$PROJECT_DIR$/.idea/Umapyoi-Soul-Reroller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/umapyoisoulreroller-1.21.1-neoforge.1.iml" filepath="$PROJECT_DIR$/.idea/modules/umapyoisoulreroller-1.21.1-neoforge.1.iml" group="umapyoisoulreroller-1.21.1-neoforge.1" />
     </modules>
   </component>
 </project>
