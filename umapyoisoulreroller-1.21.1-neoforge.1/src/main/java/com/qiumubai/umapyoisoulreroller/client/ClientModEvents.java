@@ -3,6 +3,7 @@ package com.qiumubai.umapyoisoulreroller.client;
 import com.qiumubai.umapyoisoulreroller.Config;
 import com.qiumubai.umapyoisoulreroller.UmapyoiSoulReroller;
 import com.qiumubai.umapyoisoulreroller.network.RerollFactorPayload;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.network.chat.Component;
@@ -20,6 +21,8 @@ public class ClientModEvents {
     private static final int UI_GREEN_DARK = 0xFF5CB85C;
     private static final int UI_GREEN_LIGHT = 0xFFA4FF4D;
     private static final int TEXT_WHITE = 0xFFFFFFFF;
+    private static final int UI_GRAY_DISABLED = 0xFF8B8B8B;
+    private static final int TEXT_GRAY = 0xFFA0A0A0;
 
     @SubscribeEvent
     public static void onScreenInit(ScreenEvent.Init.Post event) {
@@ -57,7 +60,7 @@ public class ClientModEvents {
             if (player == null) return false;
 
             // Same logic as server - check EXP level or creative mode
-            return player.experienceLevel >= rerollCost || player.isCreative();
+            return player.experienceLevel >= Config.REROLL_COST.getAsInt() || player.isCreative();
         }
 
         @Override

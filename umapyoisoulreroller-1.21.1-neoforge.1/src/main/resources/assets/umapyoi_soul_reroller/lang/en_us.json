@@ -2,5 +2,5 @@
   "umapyoi_soul_reroller.configuration.title": "Umapyoi Soul Reroller Configs",
   "umapyoi_soul_reroller.configuration.section.umapyoi_soul_reroller.common.toml": "Umapyoi Soul Reroller Configs",
   "umapyoi_soul_reroller.configuration.section.umapyoi_soul_reroller.common.toml.title": "Umapyoi Soul Reroller Configs",
-  "message.reroll.exprequirement": "Reroll (Costs: %s Lv)"
+  "message.reroll.exprequirement": "Reroll(%s Lv)"
 }
