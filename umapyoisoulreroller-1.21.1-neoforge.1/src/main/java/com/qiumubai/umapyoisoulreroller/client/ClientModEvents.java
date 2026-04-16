@@ -40,7 +40,7 @@ public class ClientModEvents {
                     buttonY,
                     buttonWidth,
                     buttonHeight,
-                    Component.literal("Reroll (" + cost + " Lvl)"),
+                    Component.translatable("message.reroll.exprequirement",cost),
                     (btn) -> PacketDistributor.sendToServer(new RerollFactorPayload())
             ));
         }
@@ -52,10 +52,37 @@ public class ClientModEvents {
             super(x, y, width, height, message, onPress, DEFAULT_NARRATION);
         }
 
+        private boolean hasEnoughExp() {
+            var player = Minecraft.getInstance().player;
+            if (player == null) return false;
+
+            // Same logic as server - check EXP level or creative mode
+            return player.experienceLevel >= rerollCost || player.isCreative();
+        }
+
         @Override
         public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
             // Determine button color based on hover state
-            int backgroundColor = this.isHoveredOrFocused() ? UI_GREEN_LIGHT : UI_GREEN;
+            boolean hasExp = hasEnoughExp();
+            int backgroundColor;
+            int textColor;
+
+            if (!hasExp) {
+                // NOT ENOUGH EXP - Gray disabled color
+                backgroundColor = UI_GRAY_DISABLED;
+                textColor = TEXT_GRAY;
+                this.active = false;  // Disable button click
+            } else if (this.isHoveredOrFocused()) {
+                // HOVER - Lighter green
+                backgroundColor = UI_GREEN_LIGHT;
+                textColor = TEXT_WHITE;
+                this.active = true;
+            } else {
+                // NORMAL - Bright green
+                backgroundColor = UI_GREEN;
+                textColor = TEXT_WHITE;
+                this.active = true;
+            }
 
             // Fill button background
             guiGraphics.fill(this.getX(), this.getY(),
